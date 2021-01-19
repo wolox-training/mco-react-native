@@ -14,8 +14,8 @@ export default StyleSheet.create({
     ...SHADOW
   },
   image: {
-    paddingVertical: 25,
-    paddingHorizontal: 20
+    height: 60,
+    width: 40
   },
   textContainer: {
     marginLeft: 20,
