@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { SHADOW } from '@constants/commonStyles';
 import { TUNDORA, WHITE } from '@constants/colors';
 
 export default StyleSheet.create({
@@ -9,6 +10,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     marginTop: 10,
     paddingVertical: 15,
+    paddingHorizontal: 20,
+    ...SHADOW
+  },
+  image: {
+    paddingVertical: 25,
     paddingHorizontal: 20
   },
   textContainer: {

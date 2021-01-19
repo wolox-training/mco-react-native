@@ -1,19 +1,28 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
+import bookImage from '@assets/img_book1.png';
+import { Book } from '@interfaces/book';
 
 import styles from './styles';
 
-const BOOK_IMAGE = require('../../assets/img_book1.png');
-
-function BookCell() {
+function BookCell({ author, title, imageUrl }: Book) {
   return (
     <View style={styles.container}>
-      <Image source={BOOK_IMAGE} />
+      <Image
+        source={
+          imageUrl
+            ? {
+                uri: imageUrl
+              }
+            : bookImage
+        }
+        style={styles.image}
+      />
       <View style={styles.textContainer}>
         <Text numberOfLines={2} style={styles.title}>
-          Learn UX in 3 weeks
+          {title}
         </Text>
-        <Text style={styles.subtitle}>Sofi Oksanen</Text>
+        <Text style={styles.subtitle}>{author}</Text>
       </View>
     </View>
   );
