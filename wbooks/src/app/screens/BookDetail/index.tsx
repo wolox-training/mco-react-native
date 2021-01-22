@@ -1,7 +1,7 @@
 import React from 'react';
-import { Book } from '@interfaces/book';
-import LinearGradient from 'react-native-linear-gradient';
 import { Text, View, Image } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { Book } from '@interfaces/book';
 import bookImage from '@assets/img_book1.png';
 import { CERULEAN, TURQUOISE } from '@constants/colors';
 
@@ -33,9 +33,9 @@ function BookDetail({ route }: Props) {
             {title}
           </Text>
           <Text style={styles.availability}>Unavailable</Text>
-          <Text style={styles.author}>{author}</Text>
-          <Text style={styles.year}>{year}</Text>
-          <Text style={styles.genre}>{genre}</Text>
+          <Text style={styles.text}>{author}</Text>
+          <Text style={styles.text}>{year}</Text>
+          <Text style={styles.text}>{genre}</Text>
         </View>
       </View>
       <View style={styles.wishButton}>

@@ -59,7 +59,5 @@ export default StyleSheet.create({
     fontWeight: FONT_BOLD,
     color: MONZA
   },
-  author: GREY_TEXT,
-  year: GREY_TEXT,
-  genre: GREY_TEXT
+  text: GREY_TEXT
 });
