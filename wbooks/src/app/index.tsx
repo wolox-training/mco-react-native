@@ -6,12 +6,10 @@ import AppNavigator from '@components/AppNavigator';
 
 const App = () => {
   return (
-    <>
-      <NavigationContainer>
-        <StatusBar />
-        <AppNavigator />
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      <StatusBar />
+      <AppNavigator />
+    </NavigationContainer>
   );
 };
 
