@@ -1,13 +1,20 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import bookImage from '@assets/img_book1.png';
 import { Book } from '@interfaces/book';
 
 import styles from './styles';
 
-function BookCell({ author, title, imageUrl }: Book) {
+interface Props {
+  book: Book;
+  onBookPress: (book: Book) => void;
+}
+
+function BookCell({ book, onBookPress }: Props) {
+  const handlePress = () => onBookPress(book);
+  const { imageUrl, title, author } = book;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <Image
         source={
           imageUrl
@@ -24,7 +31,7 @@ function BookCell({ author, title, imageUrl }: Book) {
         </Text>
         <Text style={styles.subtitle}>{author}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
