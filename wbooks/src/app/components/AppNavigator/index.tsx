@@ -9,7 +9,7 @@ const { Screen, Navigator } = createStackNavigator();
 
 function AppNavigator() {
   return (
-    <Navigator screenOptions={stackNavigatorConfig as Object}>
+    <Navigator screenOptions={stackNavigatorConfig as object}>
       <Screen name={ROUTES.BookList} component={BookList} options={{ title: 'Listado de libros' }} />
       <Screen name={ROUTES.BookDetail} component={BookDetail} options={{ title: 'Detalle del libro' }} />
     </Navigator>
