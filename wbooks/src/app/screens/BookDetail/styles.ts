@@ -12,6 +12,7 @@ export default StyleSheet.create({
   container: {
     backgroundColor: WHITE,
     margin: 20,
+    marginTop: 100,
     borderRadius: 5,
     alignItems: 'center',
     ...SHADOW
