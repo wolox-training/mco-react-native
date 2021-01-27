@@ -11,7 +11,7 @@ import Wishlist from '@components/WishList';
 const { Screen, Navigator } = createStackNavigator();
 const TabNavigator = createBottomTabNavigator();
 
-function LibraryStackScreen() {
+function AppNavigator() {
   return (
     <Navigator screenOptions={stackNavigatorConfig as object}>
       <Screen name={ROUTES.BookList} component={BookList} options={{ title: 'Listado de libros' }} />
@@ -26,7 +26,7 @@ function TabNavigatorScreen() {
       initialRouteName={ROUTES.Library}
       screenOptions={{ tabBarIcon: TabBarIcon }}
       tabBarOptions={tabNavigatorConfig}>
-      <TabNavigator.Screen name={ROUTES.Library} component={LibraryStackScreen} />
+      <TabNavigator.Screen name={ROUTES.Library} component={AppNavigator} />
       <TabNavigator.Screen name={ROUTES.Wishlist} component={Wishlist} />
     </TabNavigator.Navigator>
   );
