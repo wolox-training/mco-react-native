@@ -6,3 +6,4 @@ export const MONZA = '#D0021B';
 export const CERULEAN = '#00ADEE';
 export const ALTO = '#DDDDDD';
 export const TURQUOISE = '#39CCCD';
+export const GRAY = '#9B9B9B';

@@ -1,4 +1,4 @@
-import { WHITE } from '@constants/colors';
+import { WHITE, CERULEAN, GRAY } from '@constants/colors';
 import NavBackground from '@components/NavBackground';
 
 export const stackNavigatorConfig = {
@@ -19,4 +19,14 @@ export const stackNavigatorConfig = {
   headerBackground: NavBackground,
   headerTransparent: true,
   headerTintColor: WHITE
+};
+
+export const tabNavigatorConfig = {
+  labelStyle: {
+    fontSize: 10,
+    lineHeight: 12,
+    letterSpacing: 0.15
+  },
+  activeTintColor: CERULEAN,
+  inactiveTintColor: GRAY
 };
