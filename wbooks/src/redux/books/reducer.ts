@@ -1,24 +1,23 @@
-import { BOOKS } from '@constants/types';
+import { BookState } from '@interfaces/book';
+import { ReduxAction } from '@interfaces/redux';
 
-import { actionCreators } from './actions';
+import { actions as bookActions } from './actions';
 
-const initialState = {
-  ok: false,
-  data: []
+const initialState: BookState = {
+  books: [],
+  booksLoading: false,
+  booksError: null
 };
-
-interface Action {
-  type: string;
-}
-
-export const bookReducer = (state = initialState, action: Action) => {
+function booksReducer(state = initialState, action: ReduxAction): BookState {
   switch (action.type) {
-    case BOOKS.GET:
-      return {
-        ok: true,
-        data: actionCreators.getBooks()
-      };
+    case bookActions.GET_BOOKS:
+      return { ...state, booksLoading: true };
+    case bookActions.GET_BOOKS_SUCCESS:
+      return { ...state, books: action.payload, booksLoading: false, booksError: null };
+    case bookActions.GET_BOOKS_FAILURE:
+      return { ...state, booksLoading: false, booksError: action.payload };
     default:
       return state;
   }
-};
+}
+export default booksReducer;
