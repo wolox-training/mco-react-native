@@ -17,14 +17,14 @@ function BookList({ navigation }: Props) {
   useEffect(() => {
     dispatch(actionCreators.getBooks());
   }, [dispatch]);
-  const books = useSelector((state: AppState) => state.book.books);
+  const books = useSelector<AppState, Book[]>(state => state.book.books);
   const onBookPress: (book: Book) => void = book => navigation.navigate(ROUTES.BookDetail, book);
   const keyExtractor = ({ id }: Book) => String(id);
   const renderBook: ListRenderItem<Book> = ({ item }) => <BookCell book={item} onBookPress={onBookPress} />;
 
   return (
     <SafeAreaView style={styles.listContainer}>
-      <FlatList data={books as Book[]} renderItem={renderBook} keyExtractor={keyExtractor} />
+      <FlatList data={books} renderItem={renderBook} keyExtractor={keyExtractor} />
     </SafeAreaView>
   );
 }
