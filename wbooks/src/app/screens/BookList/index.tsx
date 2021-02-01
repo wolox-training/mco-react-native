@@ -14,10 +14,10 @@ interface Props extends Navigation {}
 
 function BookList({ navigation }: Props) {
   const dispatch = useDispatch();
+  const books = useSelector<AppState, Book[]>(state => state.book.books);
   useEffect(() => {
     dispatch(actionCreators.getBooks());
   }, [dispatch]);
-  const books = useSelector<AppState, Book[]>(state => state.book.books);
   const onBookPress: (book: Book) => void = book => navigation.navigate(ROUTES.BookDetail, book);
   const keyExtractor = ({ id }: Book) => String(id);
   const renderBook: ListRenderItem<Book> = ({ item }) => <BookCell book={item} onBookPress={onBookPress} />;
