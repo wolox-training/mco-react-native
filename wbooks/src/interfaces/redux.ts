@@ -1,4 +1,4 @@
-import { BookState } from './Book';
+import { BookState } from './book';
 
 export interface AppState {
   booksReducer: BookState;
