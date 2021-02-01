@@ -1,10 +1,5 @@
-import { BookState } from './book';
-
-export interface ReduxAction {
-  type: string;
-  payload: any;
-}
+import { BookState } from './Book';
 
 export interface AppState {
-  book: BookState;
+  booksReducer: BookState;
 }
