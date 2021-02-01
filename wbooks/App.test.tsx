@@ -10,7 +10,7 @@ import App from './src/app';
 const mockStore = configureMockStore([thunk]);
 
 const store = mockStore({
-  booksReducer: {}
+  book: {}
 });
 
 jest.useFakeTimers();

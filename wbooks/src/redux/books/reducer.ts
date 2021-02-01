@@ -12,4 +12,4 @@ const reducerDescription = {
   primaryActions: [actions.GET_BOOKS]
 };
 
-export const booksReducer = createReducer(fullInitialState, completeReducer(reducerDescription));
+export default createReducer(fullInitialState, completeReducer(reducerDescription));

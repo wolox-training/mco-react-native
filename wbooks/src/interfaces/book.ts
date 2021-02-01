@@ -2,10 +2,10 @@ export interface Book {
   id: number;
   title: string;
   author: string;
-  imageUrl: string | null;
   genre: string;
   publisher: string;
   year: string;
+  imageUrl: string | null;
 }
 
 export interface BookState {

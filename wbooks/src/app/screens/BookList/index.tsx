@@ -14,7 +14,7 @@ interface Props extends Navigation {}
 
 function BookList({ navigation }: Props) {
   const dispatch = useDispatch();
-  const books = useSelector<AppState, Book[]>(state => state.booksReducer.books);
+  const books = useSelector<AppState, Book[]>(state => state.book.books);
   useEffect(() => {
     dispatch(actionCreators.getBooks());
   }, [dispatch]);
