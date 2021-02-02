@@ -1,7 +1,7 @@
 import { create } from 'apisauce';
 import Config from 'react-native-config';
 
-import Reactotron from './reactotronConfig';
+import Reactotron from './ReactotronConfig';
 
 const api = create({
   baseURL: Config.API_BASE_URL,
