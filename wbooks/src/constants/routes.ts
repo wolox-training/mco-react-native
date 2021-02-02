@@ -8,7 +8,8 @@ export const ROUTES = {
   BookDetail: 'BookDetail',
   BookList: 'BookList',
   Library: 'Library',
-  Wishlist: 'Wishlist'
+  Wishlist: 'Wishlist',
+  SearchScreen: 'SearchScreen'
 };
 
 type TabBarIcons = {
