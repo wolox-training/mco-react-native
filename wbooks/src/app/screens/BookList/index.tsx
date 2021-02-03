@@ -7,6 +7,7 @@ import BookCell from '@components/BookCell';
 import { ROUTES } from '@constants/routes';
 import actionCreators from '@redux/books/actions';
 import { AppState } from '@interfaces/redux';
+import GenericMessage from '@components/GenericMessage';
 
 import styles from './styles';
 
@@ -27,7 +28,12 @@ function BookList({ books }: Props) {
 
   return (
     <SafeAreaView style={styles.listContainer}>
-      <FlatList data={books ? books : booksStore} renderItem={renderBook} keyExtractor={keyExtractor} />
+      <FlatList
+        data={books ? books : booksStore}
+        renderItem={renderBook}
+        keyExtractor={keyExtractor}
+        ListEmptyComponent={<GenericMessage text="No Books Found" />}
+      />
     </SafeAreaView>
   );
 }

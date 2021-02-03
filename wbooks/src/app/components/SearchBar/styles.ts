@@ -9,6 +9,7 @@ export default StyleSheet.create({
     borderRadius: 15,
     backgroundColor: WHITE,
     width: '90%',
+    minWidth: 300,
     alignSelf: 'center',
     paddingHorizontal: 10,
     marginBottom: 20,
