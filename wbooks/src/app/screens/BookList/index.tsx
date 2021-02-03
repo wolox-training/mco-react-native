@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
 import { FlatList, SafeAreaView, ListRenderItem } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 import { Book } from '@interfaces/book';
 import BookCell from '@components/BookCell';
 import { ROUTES } from '@constants/routes';
-import { Navigation } from '@interfaces/navigation';
 import actionCreators from '@redux/books/actions';
 import { AppState } from '@interfaces/redux';
 
 import styles from './styles';
 
-interface Props extends Navigation {}
+interface Props {
+  books: Book[];
+}
 
-function BookList({ navigation }: Props) {
+function BookList({ books }: Props) {
+  const navigation = useNavigation();
   const dispatch = useDispatch();
-  const books = useSelector<AppState, Book[]>(state => state.book.books);
+  const booksStore = useSelector<AppState, Book[]>(state => state.book.books);
   useEffect(() => {
     dispatch(actionCreators.getBooks());
   }, [dispatch]);
@@ -24,7 +27,7 @@ function BookList({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.listContainer}>
-      <FlatList data={books} renderItem={renderBook} keyExtractor={keyExtractor} />
+      <FlatList data={books ? books : booksStore} renderItem={renderBook} keyExtractor={keyExtractor} />
     </SafeAreaView>
   );
 }

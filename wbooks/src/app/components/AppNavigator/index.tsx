@@ -8,7 +8,7 @@ import { stackNavigatorConfig, tabNavigatorConfig } from '@config/navigation';
 import TabBarIcon from '@components/TabBarIcon';
 import Wishlist from '@screens/WishList';
 import SearchIcon from '@components/SearchIcon';
-import Search from '@screens/Search';
+import Search from '@screens/BookSearchScreen';
 import SearchBar from '@components/SearchBar';
 
 const { Screen, Navigator } = createStackNavigator();
@@ -23,7 +23,11 @@ function LibraryStackScreen() {
         options={{ title: 'Listado de libros', headerRight: () => <SearchIcon /> }}
       />
       <Screen name={ROUTES.BookDetail} component={BookDetail} options={{ title: 'Detalle del libro' }} />
-      <Screen name={ROUTES.SearchScreen} component={Search} options={{ headerTitle: () => <SearchBar /> }} />
+      <Screen
+        name={ROUTES.SearchScreen}
+        component={Search}
+        options={{ headerTitle: SearchBar, headerLeft: undefined }}
+      />
     </Navigator>
   );
 }

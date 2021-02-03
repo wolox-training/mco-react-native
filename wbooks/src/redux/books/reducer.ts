@@ -1,15 +1,19 @@
-import { completeState, createReducer, completeReducer } from 'redux-recompose';
+import { completeState, createReducer, completeReducer, onReadValue } from 'redux-recompose';
 
 import { actions } from './actions';
 
 const initialState = {
-  books: []
+  books: [],
+  bookSearch: ''
 };
 
-const fullInitialState = completeState(initialState);
+const fullInitialState = completeState(initialState, ['bookSearch']);
 
 const reducerDescription = {
-  primaryActions: [actions.GET_BOOKS]
+  primaryActions: [actions.GET_BOOKS],
+  override: {
+    [actions.SEARCH_BOOKS]: onReadValue()
+  }
 };
 
 export default createReducer(fullInitialState, completeReducer(reducerDescription));

@@ -4,14 +4,21 @@ import searchIcon from '@assets/ic_search_placeholder.png';
 
 import styles from './styles';
 
-function EmptySearch() {
-  return (
+interface Props {
+  isEmpty: boolean;
+  children: JSX.Element;
+}
+
+function WithEmptySearch(props: Props) {
+  return props.isEmpty ? (
     <View style={styles.container}>
       <Image source={searchIcon} style={styles.image} />
       <Text style={styles.title}>Search in Wbooks</Text>
       <Text style={styles.subtitle}>Find your favorite writers and books!</Text>
     </View>
+  ) : (
+    props.children
   );
 }
 
-export default EmptySearch;
+export default WithEmptySearch;
