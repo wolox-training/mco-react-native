@@ -12,7 +12,7 @@ export default StyleSheet.create({
     minWidth: 300,
     alignSelf: 'center',
     paddingHorizontal: 10,
-    marginBottom: 20,
+    marginBottom: 30,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row'

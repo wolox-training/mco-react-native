@@ -9,15 +9,15 @@ interface Props {
   children: JSX.Element;
 }
 
-function WithEmptySearch(props: Props) {
-  return props.isEmpty ? (
+function WithEmptySearch({ isEmpty, children }: Props) {
+  return isEmpty ? (
     <View style={styles.container}>
       <Image source={searchIcon} style={styles.image} />
       <Text style={styles.title}>Search in Wbooks</Text>
       <Text style={styles.subtitle}>Find your favorite writers and books!</Text>
     </View>
   ) : (
-    props.children
+    children
   );
 }
 

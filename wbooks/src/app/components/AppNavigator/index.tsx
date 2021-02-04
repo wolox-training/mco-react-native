@@ -1,14 +1,14 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import BookList from '@screens/BookList';
+import BookList from '@app/screens/Library';
 import BookDetail from '@screens/BookDetail';
 import { ROUTES } from '@constants/routes';
 import { stackNavigatorConfig, tabNavigatorConfig } from '@config/navigation';
 import TabBarIcon from '@components/TabBarIcon';
 import Wishlist from '@screens/WishList';
 import SearchIcon from '@components/SearchIcon';
-import Search from '@screens/BookSearchScreen';
+import BookSearch from '@app/screens/BookSearch';
 import SearchBar from '@components/SearchBar';
 
 const { Screen, Navigator } = createStackNavigator();
@@ -25,12 +25,9 @@ function LibraryStackScreen() {
       <Screen name={ROUTES.BookDetail} component={BookDetail} options={{ title: 'Detalle del libro' }} />
       <Screen
         name={ROUTES.SearchScreen}
-        component={Search}
+        component={BookSearch}
         options={{
-          headerTitle: SearchBar,
-          headerLeft: () => {
-            return null;
-          }
+          headerTitle: () => <SearchBar />
         }}
       />
     </Navigator>

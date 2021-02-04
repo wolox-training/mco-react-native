@@ -5,5 +5,5 @@ import { AppState } from '@interfaces/redux';
 const books = (state: AppState) => state.book.books;
 export const search = (state: AppState) => state.book.bookSearch;
 export const searchSelector = createSelector(books, search, (list: Book[], searchWord: string) =>
-  list.filter(book => book.title.toLocaleLowerCase().includes(searchWord.toLowerCase()))
+  list.filter(book => book.title.toLowerCase().includes(searchWord.toLowerCase()))
 );

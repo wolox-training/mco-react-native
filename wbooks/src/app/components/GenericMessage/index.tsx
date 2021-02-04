@@ -7,10 +7,10 @@ interface Props {
   text: string;
 }
 
-function GenericMessage(props: Props) {
+function GenericMessage({ text }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{props.text}</Text>
+      <Text style={styles.text}>{text}</Text>
     </View>
   );
 }
