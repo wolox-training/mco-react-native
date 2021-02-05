@@ -10,7 +10,8 @@ export const stackNavigatorConfig = {
     marginBottom: 20
   },
   headerLeftContainerStyle: {
-    marginBottom: 20
+    marginBottom: 30,
+    paddingHorizontal: 0
   },
   headerStyle: {
     height: 100
