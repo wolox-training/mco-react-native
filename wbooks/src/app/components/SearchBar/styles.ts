@@ -8,8 +8,7 @@ export default StyleSheet.create({
     height: 30,
     borderRadius: 15,
     backgroundColor: WHITE,
-    width: '90%',
-    minWidth: 300,
+    width: '100%',
     alignSelf: 'center',
     paddingHorizontal: 10,
     marginBottom: 30,
@@ -18,7 +17,7 @@ export default StyleSheet.create({
     flexDirection: 'row'
   },
   input: {
-    flex: 1,
+    width: '80%',
     paddingVertical: 0
   },
   searchIcon: {
