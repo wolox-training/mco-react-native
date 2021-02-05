@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { WHITE, TUNDORA } from '@constants/colors';
+import { TUNDORA, POLAR } from '@constants/colors';
 import { FONT_BOLD } from '@constants/fontWeights';
 
 const ICON_SIZE = 60;
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    backgroundColor: WHITE
+    backgroundColor: POLAR
   },
   image: {
     height: ICON_SIZE,

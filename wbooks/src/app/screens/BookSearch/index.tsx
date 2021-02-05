@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import WithEmptySearch from '@components/WithEmptySearch';
 import BookList from '@components/BookList';
 import { View } from 'react-native';
 
@@ -10,11 +9,10 @@ import styles from './styles';
 function BookSearch() {
   const searchWord = useSelector(search);
   const searchResult = useSelector(searchSelector);
+  const filteredBooks = searchWord.length < 1 ? [] : searchResult;
   return (
     <View style={styles.searchContainer}>
-      <WithEmptySearch isEmpty={searchWord.length === 0}>
-        <BookList books={searchResult} />
-      </WithEmptySearch>
+      <BookList books={filteredBooks} searchString={searchWord} isSearched />
     </View>
   );
 }
